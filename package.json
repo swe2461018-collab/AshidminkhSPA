@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "sass": "sass --watch src/scss/main.scss src/css/main.css"
+    "sass": "sass --watch src/scss/main.scss src/css/main.css",
+    "generate:images": "node tools/generate-images-json.mjs",
+    "convert:nutritions": "node src/tools/convertNutritionsEnMn.js"
   },
   "keywords": [],
   "author": "",

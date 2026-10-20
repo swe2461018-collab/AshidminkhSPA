@@ -22797,16 +22797,16 @@ has-background-danger.is-hoverable:active {
 }
 
 .app-title {
-  font-size: clamp(2rem, 5vw, 3rem);
-  line-height: 1.08;
-  letter-spacing: -0.04em;
+  font-size: clamp(1.6rem, 3.2vw, 2.25rem);
+  line-height: 1.12;
+  letter-spacing: -0.035em;
   font-weight: 800;
   max-width: 760px;
   margin-bottom: 0.5rem;
 }
 
 .app-line {
-  width: 96px;
+  width: 76px;
   height: 3px;
   border-radius: 999px;
   background: var(--orange);
@@ -22820,6 +22820,45 @@ has-background-danger.is-hoverable:active {
   line-height: 1.6;
   max-width: 760px;
   margin-bottom: 2.5rem;
+}
+
+.image-count-tag {
+  cursor: pointer;
+  text-align: center;
+  color: white;
+  border-radius: 999px;
+}
+.image-count-tag:hover {
+  background-color: rgb(14.3333333333%, 57.3333333333%, 38.3333333333%);
+}
+
+#imageModal .modal-card {
+  width: 640px;
+  border-radius: 16px;
+  overflow: hidden;
+}
+#imageModal .modal-card-head {
+  padding: 1.2rem 1.5rem;
+}
+#imageModal .modal-card-body {
+  padding: 1.5rem;
+}
+#imageModal #slideshowImage {
+  max-height: 52vh;
+  width: auto;
+  object-fit: contain;
+  border-radius: 12px;
+}
+
+.zoomable-image {
+  cursor: zoom-in;
+  transition: transform 0.2s ease;
+  transform-origin: center center;
+  user-select: none;
+}
+
+#fullscreenBtn {
+  border: none;
 }
 
 /* =========================
