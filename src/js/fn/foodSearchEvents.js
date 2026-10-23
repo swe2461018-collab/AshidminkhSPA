@@ -103,7 +103,8 @@ const DEFAULT_ITEM_COUNT = 3;
 
 // UI дээрх бүх event (click, change, keydown)-уудыг холбож өгдөг функц
 export function bindSearchEvents() {
-  const searchRoot = document.getElementById("search");
+  // Sidebar болон үр дүнгийн хэсгийн нийтлэг эцэг дээр үйлдлийг холбоно.
+  const searchRoot = document.getElementById("docsSidebar");
   const searchBtn = document.getElementById("searchBtn");
   const searchTxt = document.getElementById("searchTxt");
 
@@ -189,10 +190,7 @@ function getMatchedItems() {
     return nutritionData.filter((item) => {
       const foodName = getLocalizedValue(item.food_name).toLowerCase();
 
-      // Үгээр хайх
-      const words = foodName.split(/\s+/);
-
-      return words.some((word) => word.startsWith(keyword));
+      return foodName.replace(/\s+/g, " ").includes(keyword);
     });
   }
 
@@ -201,7 +199,7 @@ function getMatchedItems() {
 
 // Хайх үгийг авна. Хэрэв хоосон бол "" гэж авна.
 function getSearchKeyword() {
-  return document.getElementById("searchTxt")?.value.trim().toLowerCase() || "";
+  return document.getElementById("searchTxt")?.value.trim().toLowerCase().replace(/\s+/g, " ") || "";
 }
 
 // Хүнсний жагсаалтаас сонгосон checkbox-уудын food_code утгуудыг массив хэлбэрээр авна. Жишээ нь: ["01_0106", "01_0107", ...]
